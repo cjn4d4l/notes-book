@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static "assets/NotesBook Logo.png" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "css/profile.css" %}">
+    <title>{{ username }} - NotesBook</title>
+</head>
+<body>
+    <header>
+        {% if not username %}
+            <h1>Hello User</h1>
+            <nav>
+                <p>Sign Up and Log In to Post a Note!</p>
+                <button onclick="window.location.href = '/login/'">Log In</button>
+            </nav>
+        {% else %}
+            <h1>{{username}}'s NotesBook Profile</h1>
+            <nav>
+                <button onclick="window.location.href='/'">Feed</button>
+                <button id="openAddPost">Add Post</button>
+                <button id="logout">Log Out</button>
+            </nav>
+        {% endif %}
+    </header>
+    <main id="notesContainer">
+    </main>
+    <dialog id="addDialog">
+        <form id="addPostForm">
+            <h2>Add a Post</h2>
+            <label for="postTitle">Title</label>
+            <input type="text" id="postTitle" name="title" placeholder="Post title" required>
+            <label for="postContent">Content</label>
+            <textarea id="postContent" name="content" placeholder="Write your post..." required></textarea>
+            <div class="dialogActions">
+                <button type="button" id="cancelPost">Cancel</button>
+                <button id="addPost">Add Post</button>
+            </div>
+        </form>
+    </dialog>
+    <script src="{% static "js/profile.js" %}"></script>
+</body>
+</html>

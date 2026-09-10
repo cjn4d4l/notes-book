@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #24313d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #f3f5f7;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 78px;
+    padding: 18px 28px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e5e9;
+    box-shadow: 0 4px 14px rgba(36, 49, 61, 0.12);
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header > button,
+nav button {
+    width: 100%;
+    min-height: 42px;
+    margin: 0 0 0 10px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 6px;
+    background: #256b8f;
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+}
+
+header > button {
+    width: auto;
+}
+
+header > button:hover,
+nav button:hover {
+    background: #1d5876;
+}
+
+header > button:focus-visible,
+nav button:focus-visible {
+    outline: 2px solid #8bb8d8;
+    outline-offset: 2px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav p {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#notesContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    padding: 20px 28px 32px;
+}
+
+#notesContainer .Notes {
+    min-height: 170px;
+    padding: 22px;
+    border: 1px solid #e0e5e9;
+    border-radius: 8px;
+    background: #bbd2e3;
+    box-shadow: 0 4px 12px rgba(36, 49, 61, 0.08);
+}
+
+#notesContainer .Notes h2 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+#notesContainer .Notes p {
+    line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+    #notesContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    #notesContainer {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+}
+
+dialog {
+    width: min(100% - 32px, 420px);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #e0e5e9;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(36, 49, 61, 0.18);
+}
+
+dialog::backdrop {
+    background: rgba(36, 49, 61, 0.35);
+}
+
+#addPostForm {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 24px 28px;
+}
+
+#addPostForm h2 {
+    margin-bottom: 24px;
+    font-size: 26px;
+    text-align: center;
+}
+
+#addPostForm label {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+#addPostForm input,
+#addPostForm textarea {
+    width: 100%;
+    border: 1px solid #cbd3da;
+    border-radius: 6px;
+    font: inherit;
+}
+
+#addPostForm input {
+    min-height: 42px;
+    margin-bottom: 16px;
+    padding: 0 12px;
+}
+
+#addPostForm textarea {
+    min-height: 140px;
+    margin-bottom: 20px;
+    padding: 12px;
+    resize: vertical;
+}
+
+#addPostForm input:focus,
+#addPostForm textarea:focus {
+    outline: 2px solid #8bb8d8;
+    outline-offset: 1px;
+}
+
+.dialogActions {
+    display: flex;
+    gap: 10px;
+}
+
+.dialogActions button {
+    flex: 1;
+    min-height: 42px;
+    margin-top: 0;
+    border: 0;
+    border-radius: 6px;
+    background: #256b8f;
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+}
+
+.dialogActions button:hover {
+    background: #1d5876;
+}
+
+.dialogActions button:first-child {
+    background: #e0e5e9;
+    color: #24313d;
+}
+
+.dialogActions button:first-child:hover {
+    background: #cbd3da;
+}
+
+.dialogActions button:focus-visible {
+    outline: 2px solid #8bb8d8;
+    outline-offset: 2px;
+}
